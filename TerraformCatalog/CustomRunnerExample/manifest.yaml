@@ -1,0 +1,14 @@
+name: CustomRunnerExample
+summary: Basic Terraform example
+description: Deploys an environment using Terraform containing a resource group
+runner: devcenterdogfoodexternal.azurecr.io/public/deployment-environments/runners/terraform:latest
+templatePath: main.tf
+parameters: 
+- id: "name"
+  name: "Name"
+  type: "string"
+  required: true
+- id: "location"
+  name: "Location"
+  default: "centralus"
+  type: "string"

@@ -1,0 +1,19 @@
+name: CustomRunnerEmail
+summary: Deploys using Terraform and sends an email using a custom runner
+description: Deploys using Terraform and sends an email using a custom runner
+runner: fidalgo.azurecr.io/custom-runners/email:latest
+templatePath: main.tf
+parameters: 
+- id: "resource_name"
+  name: "Resource Name"
+  type: "string"
+  required: true
+- id: "location"
+  name: "Location"
+  default: "centralus"
+  type: "string"
+- id: "notification_email"
+  description: "Email of user or group to send deployment/deletion emails to"
+  name: "Notifcation Email"
+  type: "string"
+  required: true

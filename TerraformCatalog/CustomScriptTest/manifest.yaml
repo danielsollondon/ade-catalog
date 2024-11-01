@@ -1,0 +1,24 @@
+name: CustomScriptTest
+summary: Testing new manifest format for custom scripts
+description: Deploys an environment using Terraform containing a Web App
+runner: fidalgo.azurecr.io/custom-scripts/terraform:latest
+runnerConfig:
+  preDeployCommand: preDeploy1.sh {{scriptsOnlyVar}}
+  postDeployCommand: postDeploy1.sh
+  preDeleteCommand: preDelete1.sh
+  postDeleteCommand: postDelete1.sh
+templatePath: web_app.tf
+parameters:
+  - id: "resource_name"
+    name: "Resource Name"
+    required: true
+    type: "string"
+  - id: "location"
+    name: "Location"
+    required: true
+    type: "string"
+  - id: "scriptsOnlyVar"
+    name: "scriptsOnlyVar"
+    required: true
+    type: "string"
+    scriptsOnly: true

@@ -1,0 +1,38 @@
+name: AzureDataLabsDemo
+summary: Complex Terraform example using Azure Data Labs modules
+description: Deploys an environment using Terraform that contains an Azure Synapse workspace
+runner: devcenterdogfoodexternal.azurecr.io/public/deployment-environments/runners/terraform:latest
+templatePath: main.tf
+parameters: 
+- id: "location"
+  name: "Resource Group Location"
+  default: "westus"
+  type: "string"
+- id: "prefix"
+  name: "Prefix"
+  type: "string"
+  required: true
+- id: "postfix"
+  name: "Postfix"
+  type: "string"
+  required: true
+- id: "jumphost_username"
+  name: "Jumphost Username"
+  type: "string"
+  required: true
+- id: "jumphost_password"
+  name: "Jumphost Password"
+  type: "string"
+  required: true
+- id: "synadmin_username"
+  name: "Synapse Admin Username"
+  type: "string"
+  required: true
+- id: "synadmin_password"
+  name: "Synapse Admin Password"
+  type: "string"
+  required: true
+- id: "enable_private_endpoints"
+  name: "Enable Private Endpoints"
+  type: "boolean"
+  default: "false"

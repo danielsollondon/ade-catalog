@@ -1,0 +1,35 @@
+name: AzureDataLabs_FabricCapacity
+summary: Azure Data Labs Example - Creating A Fabric Capacity
+description: Deploys an environment using Terraform creating a Microsoft Fabric Capacity within a Resource Group.  
+runner: devcenterdogfoodexternal.azurecr.io/public/deployment-environments/runners/terraform:latest
+templatePath: main.tf
+parameters: 
+- id: "prefix"
+  name: "Prefix"
+  description: "Prefix for all resources"
+  type: "string"
+  required: true
+- id: "postfix"
+  name: "Postfix"
+  description: "Postfix for all resources"
+  type: "string"
+  required: true
+- id: "admin_email"
+  name: "Admin Email"
+  description: "Email for the Fabric Capacity Administrator"
+  type: "string"
+  required: true
+- id: "sku"
+  name: "SKU"
+  description: "F-Type SKU for the Fabric Capacity"
+  type: "string"
+  default: "F2"
+- id: "location"
+  name: "Location"
+  description: "Location for all resources"
+  default: "centralus"
+  type: "string"
+- id: "enable_private_endpoints"
+  name: "Enable Private Endpoints"
+  default: "false"
+  type: "string"

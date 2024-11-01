@@ -1,0 +1,5 @@
+name: VnetRunnerV2
+summary: Basic Terraform example
+description: Deploys an environment using Terraform containing a resource group
+runner: jarewertprivate.azurecr.io/deployment-environments/runners/terraform:2.0.0
+templatePath: main.tf
