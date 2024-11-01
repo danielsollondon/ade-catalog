@@ -16,8 +16,8 @@ data "azurerm_resource_group" "rg" {
 
 
 data "azurerm_kubernetes_cluster" "example" {
-  name                = "shared-cluster-01" //where var.clustername would go - maybe clustername shouldn't be a variable in this case?
-  resource_group_name = "jackkays-test"
+  name                = "sh03-eus2-02" //where var.clustername would go - maybe clustername shouldn't be a variable in this case?
+  resource_group_name = "prod-clu-grp01"
 }
 
 
