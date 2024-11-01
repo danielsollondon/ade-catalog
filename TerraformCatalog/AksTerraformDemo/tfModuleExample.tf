@@ -119,8 +119,8 @@ resource "azurerm_role_assignment" "example" {
 # }
 
 resource "azurerm_key_vault_secret" "example" {
-  name         = "db-connection-string"
-  value        = "my-cosmos-db-connection-string"
+  name         = "db-conn-string"
+  value        = "a HUUUUUGE SECRET"
   key_vault_id = azurerm_key_vault.example.id
   depends_on = [ azurerm_role_assignment.example_akv_rbac, azurerm_role_assignment.example_akv_rbac_for_del ]
 }
